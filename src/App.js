@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
-import { fetchLocations, fethRandomBathrooms } from './Services/Server';
+import { fetchLocations, fethLocation } from './Services/Server';
 import Location from './Components/location';
+import Map from './Components/Map';
 
 
 class App extends Component {
@@ -22,7 +23,7 @@ class App extends Component {
 
   handleSubmit = async (e) => {
     e.preventDefault();
-    const All = await fethRandomBathrooms(this.state.userInputs)
+    const All = await fethLocation(this.state.userInputs)
     this.setState({
       userInputs: All
     });
@@ -37,7 +38,8 @@ class App extends Component {
   render() {
     return (
       <div className='App'>
-        <h1>Testing App</h1>
+        <Map />
+        {/* <h1>Testing App</h1> */}
         <Location
           userInputs={this.state.userInputs}
           handleChange={this.handleChange}

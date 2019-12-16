@@ -1,6 +1,5 @@
 import React from 'react'
 
-
 class location extends React.Component {
   render() {
     return (
@@ -26,11 +25,16 @@ class location extends React.Component {
 
                 <h1>{station.title}</h1>
                 <p>{station.vicinity}</p>
+                <p>Lat: {station.position[0]}</p>
+                <p>Lon: {station.position[1]}</p>
+
               </div>
             </div>
 
+
           ))}
         </div>
+        {/* {console.log(this.station.position)} */}
       </div>
     )
   }

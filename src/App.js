@@ -11,7 +11,8 @@ class App extends Component {
     this.state = {
       userInputs: '',
       location: [],
-      title: ''
+      title: '',
+      position: ''
     }
   }
   componentDidMount = async () => {
@@ -38,8 +39,11 @@ class App extends Component {
   render() {
     return (
       <div className='App'>
-        <Map />
-        {/* <h1>Testing App</h1> */}
+        <h3>Nav Will Go here </h3>
+        <h1>Welcome</h1>
+        <Map
+          position={this.state.position}
+        />
         <Location
           userInputs={this.state.userInputs}
           handleChange={this.handleChange}
